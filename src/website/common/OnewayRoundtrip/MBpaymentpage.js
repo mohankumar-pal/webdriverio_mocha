@@ -1,0 +1,108 @@
+const managebooking = require('../../pageobjects/OnewayRoundtrip/managebookingpo.js')
+const library = require('../../common/Genericlibrary.js')
+async function Netbanking() {
+
+    await library.clickAction(managebooking.radiobuttonNetbanking)
+    await browser.pause(1000)
+    await library.pagescrollAction(managebooking.checkboxTerms)
+    await browser.pause(2000)
+    await library.clickAction(managebooking.checkboxTerms)
+
+    await browser.pause(2000)
+    await library.pagescrollAction(managebooking.buttonContinuePay)
+    await library.pagescrollAction(managebooking.textPaymentVal)
+    await library.pagescrollAction(managebooking.buttonContinuePay)
+    await browser.pause(3000)
+    await library.clickAction(managebooking.buttonContinuePay)
+    await library.waitforexistAction(managebooking.textInternetBanking)
+    await browser.pause(3000)
+    await library.clickAction(managebooking.dropdownSelectBank)
+    await browser.pause(2000)
+    await library.clickAction(managebooking.optionBank)
+    await library.clickAction(managebooking.buttonMakePayment)
+    await library.waitforexistAction(managebooking.textStatus)
+    await library.clickAction(managebooking.dropdownStatus)
+    await browser.pause(3000)
+    await library.clickAction( managebooking.optionStatus[1])
+    await library.clickAction(managebooking.buttonSubmitPayment)
+
+}
+
+async function emi() {
+    await library.clickAction(managebooking.radiobuttonEmi)
+    await browser.pause(1000)
+    await library.pagescrollAction(managebooking.checkboxTerms)
+    await browser.pause(2000)
+    await library.clickAction(managebooking.checkboxTerms)
+    await browser.pause(2000)
+    await library.pagescrollAction(managebooking.buttonContinuePay)
+    await library.pagescrollAction(managebooking.textPaymentVal)
+    await library.pagescrollAction(managebooking.buttonContinuePay)
+    await browser.pause(3000)
+    await library.clickAction(managebooking.buttonContinuePay)
+}
+async function upi() {
+    await library.clickAction(managebooking.radiobuttonUpi)
+    await browser.pause(1000)
+    await library.pagescrollAction(managebooking.checkboxTerms)
+    await browser.pause(2000)
+    await library.clickAction(managebooking.checkboxTerms)
+    await browser.pause(2000)
+    await library.pagescrollAction(managebooking.buttonContinuePay)
+    await library.pagescrollAction(managebooking.textPaymentVal)
+    await library.pagescrollAction(managebooking.buttonContinuePay)
+    await browser.pause(3000)
+    await library.clickAction(managebooking.buttonContinuePay)
+    await library.pagetimeout(managebooking.page_loader)
+    await browser.pause(5000)
+    await library.clickAction(managebooking.buttonMakePayment)
+    await library.pagetimeout(managebooking.page_loader)
+}
+
+async function wallet() {
+    await library.clickAction(managebooking.radiobuttonWallet)
+    await browser.pause(1000)
+    await library.pagescrollAction(managebooking.checkboxTerms)
+    await browser.pause(2000)
+    await library.clickAction(managebooking.checkboxTerms)
+    await browser.pause(2000)
+    await library.pagescrollAction(managebooking.buttonContinuePay)
+    await library.pagescrollAction(managebooking.textPaymentVal)
+    await library.pagescrollAction(managebooking.buttonContinuePay)
+    await browser.pause(3000)
+    await library.clickAction()
+    await library.pagetimeout(managebooking.page_loader)
+    await browser.pause(5000)
+    await library.clickAction(managebooking.buttonMakePayment)
+    await library.pagetimeout(managebooking.page_loader)
+}
+async function rupay() {
+    await library.clickAction(managebooking.radiobuttonRupay)
+    await browser.pause(1000)
+    await library.pagescrollAction(managebooking.checkboxTerms)
+    await browser.pause(2000)
+    await library.clickAction(managebooking.checkboxTerms)
+    await browser.pause(2000)
+    await library.pagescrollAction(managebooking.buttonContinuePay)
+    await library.pagescrollAction(managebooking.textPaymentVal)
+    await library.pagescrollAction(managebooking.buttonContinuePay)
+    await browser.pause(3000)
+    await library.clickAction(managebooking.buttonContinuePay)
+    await library.pagetimeout(managebooking.page_loader)
+    await library.clickAction(managebooking.dropdownEmi)
+    await library.clickAction(managebooking.optionAxisCard)
+    await library.clickAction(managebooking.optionRupayEmi)
+    await library.fillTextbox(managebooking.rupaycardnumber,CardNumber)
+    await library.fillTextbox(managebooking.rupayexpmonth,CardExpiryMonth)
+    await library.fillTextbox(managebooking.rupayexpyear,cardExpiryYear)
+    await library.fillTextbox(managebooking.rupaycvv,CVV)
+    await library.fillTextbox(managebooking.rupaycardholdername,CardHolderName)
+    await browser.pause(3000)
+    await library.clickAction(managebooking.buttonMakePayment)
+    await library.pagetimeout(managebooking.page_loader)
+}
+exports.Netbanking = Netbanking;
+exports.upi = upi;
+exports.emi = emi;
+exports.wallet = wallet;
+exports.rupay = rupay;

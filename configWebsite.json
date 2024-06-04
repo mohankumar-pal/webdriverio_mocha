@@ -1,0 +1,6 @@
+{
+    "filePath":"test/testdata/json/",
+    "chromedriverPath":"ChromeDriver/chromedriver119.exe",
+    "tripType":"oneway",     
+    "url":"https://qa.airindia.com/"
+}

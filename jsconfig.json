@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "types": [
+            "node",
+            "webdriverio/sync",
+            "@wdio/mocha-framework"
+        ]
+    },
+    "include": [
+        "test/specs/*.js",
+        "**/*.json",
+        "node_modules/@wdio/sync",
+        "node_modules/@wdio/mocha-framework",
+        "test/specs/Genericlibrary.js",
+        "test/specs/Generic_Lib/prerequists.js",
+        "test/specs/AdditionalService.js",
+        "test/specs/oneway.js",
+        "test/specs/Common_Service/PaymentPage.js",
+        "./src/generic/prerequists.js"
+    ]
+}
